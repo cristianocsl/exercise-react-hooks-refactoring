@@ -17,6 +17,7 @@ function Cars () {
           alt="red car"
         />
         <button
+
           onClick={() => setCarColor({...carColor, redCar: !redCar})}
           type="button"
         >
@@ -52,7 +53,5 @@ function Cars () {
     </div>
   )
 };
-
-Cars.contextType = CarsContext;
 
 export default Cars;
