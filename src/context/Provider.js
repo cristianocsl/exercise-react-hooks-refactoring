@@ -5,11 +5,10 @@ import React, { useState } from 'react';
 import CarsContext from './CarsContext';
 
 function Provider ({ children }) {
-
-  const [cars, setCars] = useState({
-      redCar: false,
-      blueCar: false,
-      yellowCar: false,
+  const [carColor, setCarColor] = useState({
+    redCar: false,
+    blueCar: false,
+    yellowCar: false,
   });
 
   const [signal, setSignal] = useState({
@@ -30,7 +29,7 @@ function Provider ({ children }) {
     });
   };
 
-  const context = { cars, moveCar, signal,changeSignal };
+  const context = { carColor, moveCar, signal, changeSignal };
 
   return (
     <CarsContext.Provider value={context}>

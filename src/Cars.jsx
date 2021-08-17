@@ -7,8 +7,7 @@ import carRed from './images/carRed.jpeg';
 import carYellow from './images/carYellow.jpeg';
 
 function Cars () {
-  const { cars , moveCar } = useContext(CarsContext);
-  const { redCar, blueCar, yellowCar } = cars;
+  const { carColor, carColor: {redCar, blueCar, yellowCar} , setCarColor } = useContext(CarsContext);
   return (
     <div>
       <div>
@@ -18,7 +17,8 @@ function Cars () {
           alt="red car"
         />
         <button
-          onClick={() => moveCar('redCar', !redCar)}
+
+          onClick={() => setCarColor({...carColor, redCar: !redCar})}
           type="button"
         >
           Move
@@ -31,7 +31,7 @@ function Cars () {
           alt="blue car"
         />
         <button
-          onClick={() => moveCar('blueCar', !blueCar)}
+          onClick={() => setCarColor({...carColor, blueCar: !blueCar})}
           type="button"
         >
           Move
@@ -44,7 +44,7 @@ function Cars () {
           alt="yellow car"
         />
         <button
-          onClick={() => moveCar('yellowCar', !yellowCar)}
+          onClick={() => setCarColor({...carColor, yelllowCar: !yellowCar})}
           type="button"
         >
           Move
